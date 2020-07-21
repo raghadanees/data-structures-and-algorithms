@@ -38,6 +38,7 @@ const addValues = (arr, value) => {
   // Solution code here...
   arr.push(value);
 };
+/////////// we do not need return because its arr and pass by reference
 
 const addNumbers = (num, arr, times, callback) => {
   // Solution code here...
@@ -45,7 +46,7 @@ const addNumbers = (num, arr, times, callback) => {
 //    return callback(num);
 //   };
 for (let i = 0; i < times; i++) {
-    callback(num);
+    callback(arr,num);
   }
   return arr;
 };
@@ -74,12 +75,12 @@ This function should use forEach to populate your grocery list based on the stor
 const createList = (availableItems) => {
   // Solution code here...
   let groceryList = [];
-  availableItems.forEach(value => {
-    if (item.available) {
-        groceryList.push(value.name)
+  availableItems.forEach(element => {
+    if (element.available) {
+        groceryList.push(element.name)
       }
   });
-  return groceryList
+  return groceryList;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -99,17 +100,17 @@ Return the resulting output array.
 const fizzbuzz = (arr) => {
   // Solution code here...
   let outputArray = [];
-  inputs.forEach(num => {
-    if (num % 3 === 0 && num % 5 === 0) {
+  arr.forEach(element => {
+    if (element % 3 === 0 && element % 5 === 0) {
       outputArray.push('Fizz Buzz');
-    //   if (num % 3 === 0) {
+    //   if (element % 3 === 0) {
     //     outputArray.push('Fizz');
-    } else if (num % 3 === 0) {
+    } else if (element % 3 === 0) {
       outputArray.push('Fizz');
-    } else if (num % 5 === 0) {
+    } else if (element % 5 === 0) {
       outputArray.push('Buzz');
     } else {
-      outputArray.push(num);
+      outputArray.push(element);
     }
   })
   return outputArray
