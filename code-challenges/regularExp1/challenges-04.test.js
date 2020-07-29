@@ -58,8 +58,12 @@ const isCapitalized = (str) => {
   // Solution code here...
 //   let regex = \b[A-Z].*?\b;
 //   return (str.match(regex));
-  let regex = /[A-Z](\w)*/g;
-  return (str.match(regex)) ;
+let reg = str.match(/[A-Z][A-Za-z]+/g);
+if (reg === null) {
+  return [];
+} else {
+  return reg;
+}
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -70,8 +74,13 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 
 const citiesAtoJ = (arr) => {
   // Solution code here...
-  let regex = /[A-J](\w)*/g;
-  return (arr.match(regex)) || [];
+  let newArr = [];
+  arr.forEach((el) => {
+    if (el.match(/^[A-J][a-z]+/)) {
+      newArr.push(el);
+    }
+  });
+  return newArr
 };
 
 
