@@ -10,8 +10,9 @@ const createServer = () => {
   // Solution code here...
   const express = require('express');
   const app = express();
+  
   app.get('/hello',(request,response)=>{
-    response.status(200).send('Hellooo ');
+    response.status(200).send('Hello');
   });
 
   app.get('/aboutme',(request,response)=>{
@@ -56,7 +57,9 @@ const count = (target, input) => {
   return counter;
 };
 
-
+//   return input.reduce((a, row) => {
+//     return a + row.filter(x => x === target).length;
+//   }, 0)
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
